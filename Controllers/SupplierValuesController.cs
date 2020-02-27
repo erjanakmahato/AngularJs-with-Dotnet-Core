@@ -44,17 +44,23 @@ namespace SportsStore.Web.Controllers
         [HttpPut("{id}")]
         public IActionResult ReplaceSupplier(long id, [FromBody] SupplierData sdata)
         {
-            if (ModelState.IsValid) 
-            { 
-                Supplier s = sdata.Supplier; 
-                s.Id = id; 
+            if (ModelState.IsValid)
+            {
+                Supplier s = sdata.Supplier;
+                s.Id = id;
                 context.Update(s);
-                context.SaveChanges(); 
-                return Ok(); 
+                context.SaveChanges();
+                return Ok();
             } else
-            { 
+            {
                 return BadRequest(ModelState);
-            } 
+            }
+        }
+        [HttpDelete("{id}")]
+        public void DeleteSupplier(long id)
+        {
+            context.Remove(new Supplier { Id = id });
+            context.SaveChanges();
         }
 
 

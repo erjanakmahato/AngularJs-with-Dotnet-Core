@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\netcore\\Janak\\SportsStore.Web\\SportsStore.Web.csproj": {}
+    "F:\\Elect\\SportsStore.Web\\SportsStore.Web.csproj": {}
   },
   "projects": {
-    "D:\\netcore\\Janak\\SportsStore.Web\\SportsStore.Web.csproj": {
+    "F:\\Elect\\SportsStore.Web\\SportsStore.Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\netcore\\Janak\\SportsStore.Web\\SportsStore.Web.csproj",
+        "projectUniqueName": "F:\\Elect\\SportsStore.Web\\SportsStore.Web.csproj",
         "projectName": "SportsStore.Web",
-        "projectPath": "D:\\netcore\\Janak\\SportsStore.Web\\SportsStore.Web.csproj",
-        "packagesPath": "C:\\Users\\Janak Singh\\.nuget\\packages\\",
-        "outputPath": "D:\\netcore\\Janak\\SportsStore.Web\\obj\\",
+        "projectPath": "F:\\Elect\\SportsStore.Web\\SportsStore.Web.csproj",
+        "packagesPath": "C:\\Users\\Brainnovation\\.nuget\\packages\\",
+        "outputPath": "F:\\Elect\\SportsStore.Web\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Janak Singh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Brainnovation\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
