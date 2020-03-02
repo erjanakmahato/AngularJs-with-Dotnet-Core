@@ -61,7 +61,7 @@ namespace SportsStore.Web.Controllers
         //port/api/products
         //port/api/products?related=true
         [HttpGet]
-        public IEnumerable<Product>GetProducts(string category,string search,bool related = false)
+        public IEnumerable<Product>GetProducts(string category,string search,bool related = false,bool metadata=false)
         {
             IQueryable<Product> query = context.Products;
             if (!string.IsNullOrWhiteSpace(category))
@@ -72,7 +72,8 @@ namespace SportsStore.Web.Controllers
             if (!string.IsNullOrWhiteSpace(search)) 
             { 
                 string searchLower = search.ToLower();
-                query = query.Where(p => p.Name.ToLower().Contains(searchLower) || p.Description.ToLower().Contains(searchLower)); }
+                query = query.Where(p => p.Name.ToLower().Contains(searchLower) || p.Description.ToLower().Contains(searchLower)); 
+            }
 
             if (related)
             {
@@ -90,12 +91,23 @@ namespace SportsStore.Web.Controllers
                     }
                 });
                 return data;
+               // return metadata ? CreateMetadata(data) : Ok(data);
+
 
             }
             else
             {
                 return query;
+               // return metadata ? CreateMetadata(query) : Ok(query);
             }
+        }
+        private IActionResult CreateMetadata(IEnumerable<Product> products)
+        {
+            return Ok(new
+            {
+                data = products,
+                categories=context.Products.Select(p=>p.Category).Distinct().OrderBy(c=>c)
+            });
         }
        
          [HttpPost]
